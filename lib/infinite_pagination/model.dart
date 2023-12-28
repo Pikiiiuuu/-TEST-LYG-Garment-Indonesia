@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 
+//add products model
 class ResponseModel {
   ResponseModel({
     required this.products,
