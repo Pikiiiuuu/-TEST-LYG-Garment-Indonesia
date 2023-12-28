@@ -5,6 +5,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_lyg_test/ly_splash.dart';
 
 void main() async {
+  //add red dead screen error handling
   // ErrorWidget.builder = (FlutterErrorDetails details) => Scaffold(
   //   body: Center(
   //       child: Container(
@@ -19,6 +20,7 @@ void main() async {
   );
 }
 
+//add handling if rejected from using HTTPS
 // class MyHttpOverrides extends HttpOverrides{
 //   @override
 //   HttpClient createHttpClient(SecurityContext context){
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
       home: Splash(),
     );
   }
-
+  //force the app for using portrait mode
   /// blocks rotation; sets orientation to: portrait
   void _portraitModeOnly() {
     SystemChrome.setPreferredOrientations([
