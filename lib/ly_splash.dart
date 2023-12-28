@@ -4,7 +4,7 @@ import 'package:flutter_lyg_test/infinite_pagination/post_home.dart';
 import 'package:flutter_lyg_test/ly_product.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+//add splash screen
 class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
@@ -21,6 +21,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     return new Timer(_duration, navigationPage);
   }
 
+  //routing to main page
   void navigationPage() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     Navigator.pushReplacement(
