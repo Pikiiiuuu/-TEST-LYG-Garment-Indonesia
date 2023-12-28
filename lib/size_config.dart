@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//add utils size_config for screent proportion
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static late double screenWidth;
