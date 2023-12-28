@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_lyg_test/components/drawer.dart';
 import 'package:flutter_lyg_test/constant.dart';
 import 'package:flutter_lyg_test/ly_product_detail.dart';
 import 'package:flutter_lyg_test/size_config.dart';
@@ -23,6 +24,7 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  //defined variable and object
   Product? product;
   List<Map<String, dynamic>> _get = [];
   List _getCategories = [];
@@ -32,6 +34,7 @@ class _ProductPageState extends State<ProductPage> {
 
   final oCcy = new NumberFormat("#,##0", "en_US");
 
+  //get list of category data
   Future<bool> getCategories() async {
     String url = "https://dummyjson.com/products/categories";
     EasyLoading.show(status: 'loading...');
@@ -45,7 +48,7 @@ class _ProductPageState extends State<ProductPage> {
     }
     return false;
   }
-
+  //get list of product data
   Future<bool> getProducts() async {
     String url = "https://dummyjson.com/products";
     EasyLoading.show(status: 'loading...');
@@ -61,6 +64,7 @@ class _ProductPageState extends State<ProductPage> {
     return false;
   }
 
+  //get list of product by category data
   Future<bool> getProductsByCategory(String category) async {
     String url = "https://dummyjson.com/products/category/$category";
     EasyLoading.show(status: 'loading...');
@@ -75,7 +79,7 @@ class _ProductPageState extends State<ProductPage> {
     }
     return false;
   }
-
+  //run search product
   void _runFilter(String enteredKeyword) {
     List<Map<String, dynamic>> results = [];
     if (enteredKeyword.isEmpty) {
@@ -94,7 +98,7 @@ class _ProductPageState extends State<ProductPage> {
       _found = results;
     });
   }
-
+  //show category menu using modal popup
   showModalCategories() {
     return showModalBottomSheet(
         context: context,
@@ -168,11 +172,12 @@ class _ProductPageState extends State<ProductPage> {
     getCategories();
     super.initState();
   }
-
+  //UI of the product page
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      drawer: DrawerSection(),
       body: Builder(
         builder: (context) => SafeArea(
           child: SingleChildScrollView(
