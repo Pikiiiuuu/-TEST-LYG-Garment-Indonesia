@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lyg_test/size_config.dart';
-
+//add some constant
 const kPrimaryColor = Color(0xff144EA2);
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
