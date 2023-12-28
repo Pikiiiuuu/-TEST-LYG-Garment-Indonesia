@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:flutter_lyg_test/components/drawer.dart';
 import 'package:flutter_lyg_test/components/icon_btn.dart';
 import 'package:flutter_lyg_test/components/section_title.dart';
 import 'package:flutter_lyg_test/models/Product_Model.dart';
@@ -15,9 +16,8 @@ import 'dart:convert' as convert;
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:unicons/unicons.dart';
-
 import 'constant.dart';
-
+//add detail of product data
 class DetailsScreen extends StatefulWidget {
   final title,
       description,
@@ -62,7 +62,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   TextEditingController _controllerKeyword = TextEditingController();
 
   var list;
-
+  //get list of product data
   Future<bool> getProducts() async {
     String url = "https://dummyjson.com/products?limit=10";
     EasyLoading.show(status: 'loading...');
@@ -88,6 +88,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerSection(),
       backgroundColor: Color(0xFFF5F6F9),
       body: Builder(
         builder: (context) => SafeArea(
